@@ -160,11 +160,7 @@ public class StudentService {
 
     public void searchStudent(int studetnId) {
         List<Student> list = new ArrayList<>();
-        for (Student s : FileManage.map.values()) {
-            if (studetnId == s.getStudetnId()) {
-                list.add(s);
-            }
-        }
+        list.add(FileManage.map.get(studetnId));
 
         if (list.isEmpty()) {
             System.out.println("No student found");
